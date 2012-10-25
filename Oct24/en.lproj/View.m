@@ -10,13 +10,24 @@
 
 @implementation View
 
-- (id)initWithFrame:(CGRect)frame
+- (id) initWithFrame: (CGRect) frame
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame: frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor yellowColor];
     }
     return self;
+}
+
+- (void) drawRect: (CGRect) rect
+{
+    // Drawing code
+    UIFont *font = [UIFont systemFontOfSize: 40.0];
+    //NSString *string = @"Hello, World!";
+    NSString *string = NSLocalizedString(@"Greeting", @"displayed with drawAtPoint:");
+    CGPoint point = CGPointMake(0.0, 0.0);
+    [string drawAtPoint: point withFont: font];
 }
 
 /*
